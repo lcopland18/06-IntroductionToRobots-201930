@@ -120,6 +120,7 @@ def go(robot, seconds, left_wheel_speed, right_wheel_speed):
 
 def challenge1(robot):
     """ Your instructor will tell you this challenge. """
+    spin(robot,1,50)
 
 
 def challenge2(robot):
