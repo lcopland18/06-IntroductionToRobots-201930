@@ -43,7 +43,7 @@ def run_test_spin(robot):
 def spin(robot, seconds, speed):
     """ :type robot: rb.RoseBot """
     # -------------------------------------------------------------------------
-    # TODO: 4.
+    # DONE: 4.
     #   Makes the robot move, by using this pattern:
     #    1. Turn on the wheel motors at the given speed but with:
     #        -- LEFT wheel POSITIVE speed
@@ -68,10 +68,35 @@ def run_test_go(robot):
       :type robot:  rb.RoseBot
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this.
+    # DONE: 3. Implement this.
     # -------------------------------------------------------------------------
+    robot.drive_system.left_motor.turn_on(25)
+    robot.drive_system.right_motor.turn_on(25)
+    time.sleep(2)
+    robot.drive_system.left_motor.turn_off()
+    robot.drive_system.right_motor.turn_off()
+    time.sleep(2)
 
+    robot.drive_system.left_motor.turn_on(50)
+    robot.drive_system.right_motor.turn_on(50)
+    time.sleep(4)
+    robot.drive_system.left_motor.turn_off()
+    robot.drive_system.right_motor.turn_off()
+    time.sleep(2)
 
+    robot.drive_system.left_motor.turn_on(75)
+    robot.drive_system.right_motor.turn_on(75)
+    time.sleep(6)
+    robot.drive_system.left_motor.turn_off()
+    robot.drive_system.right_motor.turn_off()
+    time.sleep(2)
+
+    robot.drive_system.left_motor.turn_on(100)
+    robot.drive_system.right_motor.turn_on(100)
+    time.sleep(8)
+    robot.drive_system.left_motor.turn_off()
+    robot.drive_system.right_motor.turn_off()
+    time.sleep(2)
 
 def go(robot, seconds, left_wheel_speed, right_wheel_speed):
     """ :type robot: rb.RoseBot """
