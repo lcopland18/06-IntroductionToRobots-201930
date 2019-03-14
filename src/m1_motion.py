@@ -6,7 +6,7 @@ their colleagues, and Lauren Copland.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 # -----------------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   Follow along with the lecture to run this program:
 #    - Using SSH from your computer
 #   When you have successfully run this program, change this _TODO_ to DONE.
@@ -20,11 +20,12 @@ def main():
     """ Calls the other functions to test/demo them. """
     print("Running main on the robot.")
 
-    # TODO: 2. Construct a RoseBot.  Send it as an argument to other functions.
-    run_test_spin()
-    run_test_go()
-    challenge1()
-    challenge2()
+    # DONE: 2. Construct a RoseBot.  Send it as an argument to other functions.
+    robot = rb.RoseBot()
+    run_test_spin(robot)
+    run_test_go(robot)
+    challenge1(robot)
+    challenge2(robot)
 
 
 def run_test_spin(robot):
@@ -35,9 +36,9 @@ def run_test_spin(robot):
       :type robot:  rb.RoseBot
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this.
+    # DONE: 3. Implement this.
     # -------------------------------------------------------------------------
-
+    spin(robot,5,50)
 
 def spin(robot, seconds, speed):
     """ :type robot: rb.RoseBot """
@@ -52,6 +53,11 @@ def spin(robot, seconds, speed):
     #
     # Use the DOT trick to figure out how to turn on and turn off motors.
     # -------------------------------------------------------------------------
+    robot.drive_system.left_motor.turn_on(speed)
+    robot.drive_system.right_motor.turn_on(-speed)
+    time.sleep(seconds)
+    robot.drive_system.left_motor.turn_off()
+    robot.drive_system.right_motor.turn_off()
 
 
 def run_test_go(robot):
